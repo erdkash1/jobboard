@@ -8,8 +8,7 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-    private String secretKey = "your-secret-key-should-be-very-long-and-secure-at-least-256-bits";
-
+    private String secretKey = "eW91cnNlY3JldGtleXNob3VsZGJldmVyeWxvbmdhbmRzZWN1cmVhdGxlYXN0MjU2Yml0cw==";
     public String generateToken(String username){
         return Jwts.builder()
                 .setSubject(username)

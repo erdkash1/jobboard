@@ -1,6 +1,5 @@
 package com.Iggy.jobboard.security;
 
-import com.Iggy.jobboard.service.UserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,12 +17,12 @@ import java.util.ArrayList;
 public class JwtFilter extends OncePerRequestFilter {
     @Autowired
     private JwtUtil jwtUtil;
-    @Autowired
-    private UserService userService;
+
 
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+        System.out.println("Authorization header: " + request.getHeader("Authorization"));
         String authHeader = request.getHeader("Authorization");
         String token = null;
         String username = null;
